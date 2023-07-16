@@ -1,5 +1,6 @@
 const { ThreadsAPI } = require('threads-api');
 const axios = require('axios');
+require('dotenv').config();
 
 async function randomQuote() {
     try {
@@ -14,8 +15,8 @@ async function randomQuote() {
 const main = async () => {
     try {
         const threadsAPI = new ThreadsAPI({
-            username: 'numbers.bot',
-            password: 'lalicok123'
+            username: process.env.UNAME,
+            password: process.env.PASSW
         });
 
         const q = await angkanya();
